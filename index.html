@@ -1,63 +1,25 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Weather Dashboard</title>
-</head>
-<body>
-    <header>
-        <h1>Weather Dashboard</h1>
-    </header>
-    <main>
-        <div class="search">
-            <input type="text" id="cityInput" placeholder="Enter a city">
-            <button id="searchButton">Search</button>
-        </div>
-        <div class="current-weather">
-            <h2>Current Weather</h2>
-            <div id="currentWeatherCity">City Name</div>
-            <div id="currentDate">Date</div>
-            <div id="currentIcon">Weather Icon</div>
-            <div id="currentTemperature">Temperature</div>
-            <div id="currentHumidity">Humidity</div>
-            <div id="currentWind">Wind Speed</div>
-        </div>
-        <div class="forecast">
-            <h2>5-Day Forecast</h2>
-            <div id="forecastList">
-                <! Forecast data goes here ->
-            </div>
-        </div>
-    </main>
-    <div class="search-history">
-        <h2>Search History</h2>
-        <ul id="searchHistoryList">
-            < Search history items go here ->
-        </ul>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html> -->
 
 
 <!DOCTYPE html>
 <html lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/scripts.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/styles.css">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <header>
         <h1>Weather Dashboard</h1>
     </header>
     <main>
         <div class="search">
-            <input type="text" id="cityInput" placeholder="Enter a city">
-            <button id="searchButton">Search</button>
+            <input type="text" id="cityInput" placeholder="Enter a city"><button id="searchButton" onclick="">Search</button>
+            
         </div>
         <div class="current-weather">
             <h2>Current Weather</h2>
@@ -81,6 +43,6 @@
             <!-- Search history items go here -->
         </ul>
     </div>
-    <script src="script.js"></script>
 </body>
+
 </html>
