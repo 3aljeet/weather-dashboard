@@ -13,6 +13,10 @@ $(document).ready(function () {
     getCurrentWeather(city);
     get5DayForecast(city);
   });
+  $('#clearSearchHistoryBtn').on('click', function () {
+    // Your code to clear the search history goes here
+    $('#searchHistoryList').empty(); 
+  });
 });
 
 function getCurrentWeather(city) {
@@ -34,10 +38,14 @@ function displayCurrentWeather(data) {
   const cityName = data.name;
   const temperature = data.main.temp;
   const description = data.weather[0].description;
+  const wind = data.wind.speed;
+  const humidity = data.main.humidity;
 
   $('#currentWeatherCity').text(`Weather in ${cityName}:`);
   $('#currentTemperature').text(`Temperature: ${temperature}°C`);
   $('#currentIcon').text(`Description: ${description}`);
+  $('#currentWindSpeed').text(`Wind Speed: ${wind} km/h`);
+  $('#currentHumidity').text(`Humidity: ${humidity}%`);
 }
 
 
@@ -71,18 +79,21 @@ function display5DayForecast(data) {
     data.list.forEach(item => {
       if (daysDisplayed < 5) {
         const timestamp = new Date(item.dt * 1000);
+        
         const temperature = item.main.temp;
         const description = item.weather[0].description;
         const wind = item.wind.speed;
+        const humidity = item.main.humidity;
 
-
-        const forecastDay = $('<div class="forecastgitDay"></div>');
+        const forecastDay = $('<div class="forecastDay"></div>');
         forecastDay.append(`<p>Date: ${timestamp.toDateString()}</p>`);
         forecastDay.append(`<p>Temperature: ${temperature}°C</p>`);
         forecastDay.append(`<p>Description: ${description}</p>`);
+        forecastDay.append(`<p>Wind Speed: ${wind}m/s</p>`);
+        forecastDay.append(`<p>Humidity: ${humidity}%</p>`);
   
         forecastList.append(forecastDay);
-  
+        
         daysDisplayed++;
       } else {
         // Exit the loop once 5 days are displayed
@@ -122,4 +133,3 @@ function displaySearchHistory(searchHistory) {
         historyList.appendChild(listItem);
     });
 }
-
